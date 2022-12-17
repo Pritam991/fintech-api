@@ -343,3 +343,17 @@ def duration(rate:float,coupon_rate:float,frequency:float,face_value:float,settl
 
 
 
+# Function to calculate SIP (Systematic Investment Plan)
+def calculate_sip(principal, rate, time, frequency):
+  si = (principal * rate * time) / 100
+  total_invested = frequency * principal
+  total_return = si + total_invested
+  return total_return
+
+principal = float(input("Enter the principal amount: "))
+rate = float(input("Enter the interest rate: "))
+time = float(input("Enter the time period: "))
+frequency = int(input("Enter the frequency of investment (in months): "))
+
+total_return = calculate_sip(principal, rate, time, frequency)
+print(f"Total return on investment: {total_return}")
